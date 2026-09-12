@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://jin-builds.github.io/fukumichi-shindan/sitemap.xml
