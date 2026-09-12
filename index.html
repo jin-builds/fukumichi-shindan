@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>フクミチ診断 | あなたに合う副業と、最初の7日間が分かる</title>
+<meta name="description" content="使える時間・得意なこと・興味・働き方の希望などを入力するだけで、あなたに合う副業を3つ診断。最初の7日間で何をすればいいかまで、フクミチ診断が具体的に案内します。入力内容は端末内にのみ保存され、外部には送信されません。">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23ffffff'/%3E%3Ccircle cx='32' cy='32' r='22' fill='none' stroke='%230f8a5f' stroke-width='4'/%3E%3Cpolygon points='32,16 37,32 32,48 27,32' fill='%2334c98e'/%3E%3Ccircle cx='32' cy='32' r='3' fill='%230f8a5f'/%3E%3C/svg%3E">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="icon-compass" viewBox="0 0 64 64">
+    <circle cx="32" cy="32" r="27" fill="none" stroke="currentColor" stroke-width="3"/>
+    <circle cx="32" cy="6" r="1.6" fill="currentColor"/>
+    <circle cx="32" cy="58" r="1.6" fill="currentColor"/>
+    <circle cx="6" cy="32" r="1.6" fill="currentColor"/>
+    <circle cx="58" cy="32" r="1.6" fill="currentColor"/>
+    <polygon points="32,14 39,32 32,50 25,32" fill="currentColor" opacity="0.18"/>
+    <polygon points="32,14 37,32 32,32" fill="currentColor"/>
+    <polygon points="32,50 27,32 32,32" fill="currentColor" opacity="0.55"/>
+    <circle cx="32" cy="32" r="3" fill="currentColor"/>
+  </symbol>
+</svg>
+
+<header class="site-header">
+  <div class="container header-inner">
+    <div class="brand">
+      <svg class="icon-compass brand-icon" aria-hidden="true"><use href="#icon-compass"></use></svg>
+      <span class="brand-mark">フクミチ診断</span>
+      <span class="brand-sub">あなたの「やってみたい」が、きっと見つかる。</span>
+    </div>
+    <nav class="site-nav" aria-label="ページ内リンク">
+      <a href="#diagnose">診断する</a>
+      <a href="#disclaimer">免責事項</a>
+      <a href="#privacy">プライバシー</a>
+    </nav>
+    <a href="#diagnose" class="btn btn-primary btn-small header-cta">今すぐ診断する <span aria-hidden="true">→</span></a>
+  </div>
+</header>
+
+<!-- Brand visual: header image -->
+<div class="brand-visual">
+  <img
+    src="fukumichi_header_light.jpg"
+    alt="フクミチ診断。好きなことで、自由に生きる未来へ。今の自分から未来の自分へ。リュックを背負った人物が、Web系・クリエイティブ・スキル販売・ネットショップ・オンライン講師・在宅ワーク・その他の働き方への道しるべが立つ道を見つめている。"
+    class="brand-visual-img"
+    width="1400" height="788"
+  >
+</div>
+
+<!-- Brand visual: diagnosis intro image (contains the CTA into the form) -->
+<div class="brand-visual diagnosis-visual">
+  <img
+    src="fukumichi_diagnosis_light.jpg"
+    alt="副業を始めたい。でも、こんなことで迷っていませんか？ 自分に何が向いているのか分からない。最初の一歩が分からない。本業が忙しくて時間が少ない。未経験で稼げるか不安。初期費用をかけたくない。ネット副業以外の選択肢も知りたい。フクミチ診断なら、あなたの条件や希望から自分に合う副業と具体的な始め方まで分かります。たった3分で完了、あなたに合う副業を3つ提案、最初の7日間の行動プランつき。"
+    class="brand-visual-img"
+    width="1400" height="933"
+  >
+  <button
+    type="button"
+    id="diagnosis-image-cta"
+    class="diagnosis-cta-hotspot"
+    aria-label="自分に合う副業を診断する（診断フォームへ移動します）"
+  ></button>
+</div>
+
+<main class="container">
+
+  <!-- Diagnosis Form -->
+  <section id="diagnose" class="card form-card">
+    <h2 class="section-title">診断フォーム</h2>
+    <p class="section-desc">すべての項目に答えてください。入力内容はこの端末にのみ保存されます。</p>
+
+    <form id="diagnosis-form" novalidate>
+
+      <fieldset class="field-block">
+        <legend>1. 1週間に使える時間</legend>
+        <div class="option-grid" data-name="time" data-type="radio">
+          <label class="option-pill">
+            <input type="radio" name="time" value="0" required>
+            <span>週1〜3時間</span>
+          </label>
+          <label class="option-pill">
+            <input type="radio" name="time" value="1">
+            <span>週3〜5時間</span>
+          </label>
+          <label class="option-pill">
+            <input type="radio" name="time" value="2">
+            <span>週5〜10時間</span>
+          </label>
+          <label class="option-pill">
+            <input type="radio" name="time" value="3">
+            <span>週10〜20時間</span>
+          </label>
+          <label class="option-pill">
+            <input type="radio" name="time" value="4">
+            <span>週20時間以上</span>
+          </label>
+        </div>
+        <p class="field-error" data-error-for="time">いずれか1つを選択してください</p>
+      </fieldset>
+
+      <fieldset class="field-block">
+        <legend>2. 平日と土日、どちらが活動しやすいですか</legend>
+        <div class="option-grid" data-name="dayType" data-type="radio">
+          <label class="option-pill">
+            <input type="radio" name="dayType" value="weekday" required>
+            <span>平日中心</span>
+          </label>
+          <label class="option-pill">
+            <input type="radio" name="dayType" value="weekend">
+            <span>土日中心</span>
+          </label>
+          <label class="option-pill">
+            <input type="radio" name="dayType" value="either">
+            <span>どちらでも</span>
+          </label>
+        </div>
+        <p class="field-error" data-error-for="dayType">いずれか1つを選択してください</p>
+      </fieldset>
+
+      <fieldset class="field-block">
+        <legend>3. 働く場所のタイプ</legend>
+        <div class="option-grid" data-name="workStyle" data-type="radio">
+          <label class="option-pill">
+            <input type="radio" name="workStyle" value="online" required>
+            <span>自宅中心で働きたい</span>
+          </label>
+          <label class="option-pill">
+            <input type="radio" name="workStyle" value="offline">
+            <span>外に出て働きたい</span>
+          </label>
+          <label class="option-pill">
+            <input type="radio" name="workStyle" value="either">
+            <span>どちらでもよい</span>
+          </label>
+        </div>
+        <p class="field-error" data-error-for="workStyle">いずれか1つを選択してください</p>
+      </fieldset>
+
+      <fieldset class="field-block">
+        <legend>4. 体を動かすのは好きですか</legend>
+        <div class="option-grid" data-name="physicalPref" data-type="radio">
+          <label class="option-pill">
+            <input type="radio" name="physicalPref" value="good" required>
+            <span>好き</span>
+          </label>
+          <label class="option-pill">
+            <input type="radio" name="physicalPref" value="neutral">
+            <span>普通</span>
+          </label>
+          <label class="option-pill">
+            <input type="radio" name="physicalPref" value="poor">
+            <span>あまり好きではない</span>
+          </label>
+        </div>
+        <p class="field-error" data-error-for="physicalPref">いずれか1つを選択してください</p>
+      </fieldset>
+
+      <fieldset class="field-block">
+        <legend>5. 人と話すのは得意ですか</legend>
+        <div class="option-grid" data-name="communication" data-type="radio">
+          <label class="option-pill">
+            <input type="radio" name="communication" value="good" required>
+            <span>得意</span>
+          </label>
+          <label class="option-pill">
+            <input type="radio" name="communication" value="neutral">
+            <span>普通</span>
+          </label>
+          <label class="option-pill">
+            <input type="radio" name="communication" value="poor">
+            <span>苦手</span>
+          </label>
+        </div>
+        <p class="field-error" data-error-for="communication">いずれか1つを選択してください</p>
+      </fieldset>
+
+      <fieldset class="field-block">
+        <legend>6. 使える環境・道具（あてはまるものを選択、複数選択可）</legend>
+        <div class="option-grid" data-name="resources" data-type="checkbox">
+          <label class="option-pill"><input type="checkbox" name="resources" value="pc"><span>パソコンを持っている</span></label>
+          <label class="option-pill"><input type="checkbox" name="resources" value="car"><span>車を使える</span></label>
+          <label class="option-pill"><input type="checkbox" name="resources" value="motorbike"><span>バイク・原付を使える</span></label>
+          <label class="option-pill"><input type="checkbox" name="resources" value="bicycle"><span>自転車を使える</span></label>
+        </div>
+        <p class="field-desc">あてはまるものがなければ、選択しなくても大丈夫です。</p>
+      </fieldset>
+
+      <fieldset class="field-block">
+        <legend>7. かけられる初期費用</legend>
+        <div class="option-grid" data-name="budget" data-type="radio">
+          <label class="option-pill">
+            <input type="radio" name="budget" value="0" required>
+            <span>0円（無料で始めたい）</span>
+          </label>
+          <label class="option-pill">
+            <input type="radio" name="budget" value="1">
+            <span>1万円未満</span>
+          </label>
+          <label class="option-pill">
+            <input type="radio" name="budget" value="2">
+            <span>1〜3万円</span>
+          </label>
+          <label class="option-pill">
+            <input type="radio" name="budget" value="3">
+            <span>3〜5万円</span>
+          </label>
+          <label class="option-pill">
+            <input type="radio" name="budget" value="4">
+            <span>5万円以上</span>
+          </label>
+        </div>
+        <p class="field-error" data-error-for="budget">いずれか1つを選択してください</p>
+      </fieldset>
+
+      <fieldset class="field-block">
+        <legend>8. 得意なこと（複数選択可）</legend>
+        <div class="option-grid" data-name="skills" data-type="checkbox">
+          <label class="option-pill"><input type="checkbox" name="skills" value="writing"><span>文章を書く</span></label>
+          <label class="option-pill"><input type="checkbox" name="skills" value="talking"><span>話す・教える</span></label>
+          <label class="option-pill"><input type="checkbox" name="skills" value="design"><span>デザイン・絵</span></label>
+          <label class="option-pill"><input type="checkbox" name="skills" value="programming"><span>プログラミング</span></label>
+          <label class="option-pill"><input type="checkbox" name="skills" value="video"><span>動画編集</span></label>
+          <label class="option-pill"><input type="checkbox" name="skills" value="language"><span>語学・翻訳</span></label>
+          <label class="option-pill"><input type="checkbox" name="skills" value="office"><span>事務・PC作業</span></label>
+          <label class="option-pill"><input type="checkbox" name="skills" value="handmade"><span>手先の作業・ものづくり</span></label>
+          <label class="option-pill"><input type="checkbox" name="skills" value="physical"><span>体力・フットワークに自信がある</span></label>
+          <label class="option-pill"><input type="checkbox" name="skills" value="driving"><span>運転が得意</span></label>
+          <label class="option-pill"><input type="checkbox" name="skills" value="cleaning"><span>掃除・整理整頓が得意</span></label>
+          <label class="option-pill"><input type="checkbox" name="skills" value="cooking"><span>料理・家事が得意</span></label>
+          <label class="option-pill"><input type="checkbox" name="skills" value="childcare"><span>子どもと関わるのが好き</span></label>
+          <label class="option-pill"><input type="checkbox" name="skills" value="animal"><span>動物のお世話が好き</span></label>
+          <label class="option-pill"><input type="checkbox" name="skills" value="photography"><span>写真・カメラが得意</span></label>
+          <label class="option-pill"><input type="checkbox" name="skills" value="communication"><span>接客・人と話すことが好き</span></label>
+          <label class="option-pill"><input type="checkbox" name="skills" value="planning"><span>段取り・企画が得意</span></label>
+        </div>
+        <p class="field-error" data-error-for="skills">1つ以上選択してください</p>
+      </fieldset>
+
+      <fieldset class="field-block">
+        <legend>9. 興味のある分野（複数選択可）</legend>
+        <div class="option-grid" data-name="interests" data-type="checkbox">
+          <label class="option-pill"><input type="checkbox" name="interests" value="it"><span>IT・プログラミング</span></label>
+          <label class="option-pill"><input type="checkbox" name="interests" value="creative"><span>クリエイティブ（デザイン・動画）</span></label>
+          <label class="option-pill"><input type="checkbox" name="interests" value="writing"><span>文章・ライティング</span></label>
+          <label class="option-pill"><input type="checkbox" name="interests" value="education"><span>教育・子どもの学び・相談</span></label>
+          <label class="option-pill"><input type="checkbox" name="interests" value="ec"><span>物販・せどり</span></label>
+          <label class="option-pill"><input type="checkbox" name="interests" value="finance"><span>投資・金融</span></label>
+          <label class="option-pill"><input type="checkbox" name="interests" value="handmade"><span>ハンドメイド・クラフト</span></label>
+          <label class="option-pill"><input type="checkbox" name="interests" value="delivery"><span>配達・物流</span></label>
+          <label class="option-pill"><input type="checkbox" name="interests" value="housework"><span>家事・生活サポート</span></label>
+          <label class="option-pill"><input type="checkbox" name="interests" value="event"><span>イベント・接客</span></label>
+          <label class="option-pill"><input type="checkbox" name="interests" value="pet"><span>ペット</span></label>
+          <label class="option-pill"><input type="checkbox" name="interests" value="photo"><span>写真・撮影</span></label>
+          <label class="option-pill"><input type="checkbox" name="interests" value="flea"><span>フリマ・リユース販売</span></label>
+          <label class="option-pill"><input type="checkbox" name="interests" value="agency"><span>便利屋・代行サービス</span></label>
+        </div>
+        <p class="field-error" data-error-for="interests">1つ以上選択してください</p>
+      </fieldset>
+
+      <fieldset class="field-block">
+        <legend>10. 副業の経験</legend>
+        <div class="option-grid" data-name="experience" data-type="radio">
+          <label class="option-pill">
+            <input type="radio" name="experience" value="none" required>
+            <span>未経験</span>
+          </label>
+          <label class="option-pill">
+            <input type="radio" name="experience" value="little">
+            <span>少し経験あり（1年未満）</span>
+          </label>
+          <label class="option-pill">
+            <input type="radio" name="experience" value="rich">
+            <span>経験豊富（1年以上）</span>
+          </label>
+        </div>
+        <p class="field-error" data-error-for="experience">いずれか1つを選択してください</p>
+      </fieldset>
+
+      <fieldset class="field-block">
+        <legend>11. 目標の月収</legend>
+        <div class="option-grid" data-name="incomeGoal" data-type="radio">
+          <label class="option-pill">
+            <input type="radio" name="incomeGoal" value="0" required>
+            <span>〜1万円</span>
+          </label>
+          <label class="option-pill">
+            <input type="radio" name="incomeGoal" value="1">
+            <span>1〜3万円</span>
+          </label>
+          <label class="option-pill">
+            <input type="radio" name="incomeGoal" value="2">
+            <span>3〜5万円</span>
+          </label>
+          <label class="option-pill">
+            <input type="radio" name="incomeGoal" value="3">
+            <span>5〜10万円</span>
+          </label>
+          <label class="option-pill">
+            <input type="radio" name="incomeGoal" value="4">
+            <span>10万円以上</span>
+          </label>
+        </div>
+        <p class="field-error" data-error-for="incomeGoal">いずれか1つを選択してください</p>
+      </fieldset>
+
+      <div class="form-actions">
+        <button type="submit" class="btn btn-primary btn-large">診断する</button>
+      </div>
+    </form>
+  </section>
+
+  <!-- History -->
+  <section class="history-section">
+    <div class="history-header">
+      <h2 class="section-title">診断履歴</h2>
+      <button id="clear-history" class="btn btn-ghost btn-small">履歴をすべて削除</button>
+    </div>
+    <p class="section-desc" id="history-empty">まだ診断履歴はありません。</p>
+    <ul id="history-list" class="history-list"></ul>
+  </section>
+
+  <!-- Disclaimer -->
+  <section id="disclaimer" class="card info-card">
+    <h2 class="section-title">免責事項</h2>
+    <ul class="info-list">
+      <li>本診断は入力内容をもとにした一般的な参考情報を提供するものであり、副業の成果・収入・収益化を保証するものではありません。</li>
+      <li>実際の収入は、個人のスキル・取り組み方・市場の状況などにより大きく異なります。「想定月収の目安」も一般的な傾向を示す参考値です。</li>
+      <li>副業を始める前に、勤務先の副業に関する規定の確認や、必要に応じた確定申告など税務上の手続きは、必ずご自身で行ってください。</li>
+      <li>高額な講座・情報商材・ツールの購入を強く勧誘してくる話や、「誰でも簡単に稼げる」といった甘い言葉には十分注意してください。本サービスは特定の商品・サービス・講座の販売や勧誘を行うものではありません。</li>
+      <li>本サービスの情報を参考にした行動によって生じたいかなる損害についても、運営者は責任を負いかねます。最終的な判断はご自身の責任で行ってください。</li>
+    </ul>
+  </section>
+
+  <!-- Privacy -->
+  <section id="privacy" class="card info-card">
+    <h2 class="section-title">プライバシーについて</h2>
+    <ul class="info-list">
+      <li>診断フォームの入力内容・診断結果・診断履歴は、お使いのブラウザ内（localStorage）にのみ保存されます。</li>
+      <li>入力内容や診断結果が、サーバーや外部の第三者・外部AIサービスに送信されることは一切ありません。すべての診断処理はお使いの端末（ブラウザ）内で完結します。</li>
+      <li>本サービスでは、Cookieの発行やアクセス解析ツールの利用は行っていません。</li>
+      <li>保存されたデータは、この端末のこのブラウザにのみ残ります。別の端末・別のブラウザに切り替えると、履歴は引き継がれません。</li>
+      <li>履歴は「診断履歴」内の「削除」または「履歴をすべて削除」ボタンからいつでも消去できます。ブラウザの設定からサイトデータを削除しても同様に消去されます。</li>
+    </ul>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <p class="footer-links"><a href="#disclaimer">免責事項</a><span aria-hidden="true">・</span><a href="#privacy">プライバシーについて</a></p>
+    <p>フクミチ診断 &mdash; 診断結果は参考情報です。入力内容や履歴はこの端末内（localStorage）にのみ保存され、外部には送信されません。</p>
+  </div>
+</footer>
+
+<button type="button" id="back-to-top" class="back-to-top" aria-label="ページ上部へ戻る" tabindex="-1">
+  <span aria-hidden="true">↑</span> TOP
+</button>
+
+<script src="data.js"></script>
+<script src="app.js"></script>
+</body>
+</html>

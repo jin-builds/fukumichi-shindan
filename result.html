@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>診断結果 | フクミチ診断</title>
+<meta name="description" content="あなたに合う副業の診断結果。おすすめ度・メリット・デメリット・7日間行動プランなどを詳しく確認できます。">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23ffffff'/%3E%3Ccircle cx='32' cy='32' r='22' fill='none' stroke='%230f8a5f' stroke-width='4'/%3E%3Cpolygon points='32,16 37,32 32,48 27,32' fill='%2334c98e'/%3E%3Ccircle cx='32' cy='32' r='3' fill='%230f8a5f'/%3E%3C/svg%3E">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="icon-compass" viewBox="0 0 64 64">
+    <circle cx="32" cy="32" r="27" fill="none" stroke="currentColor" stroke-width="3"/>
+    <circle cx="32" cy="6" r="1.6" fill="currentColor"/>
+    <circle cx="32" cy="58" r="1.6" fill="currentColor"/>
+    <circle cx="6" cy="32" r="1.6" fill="currentColor"/>
+    <circle cx="58" cy="32" r="1.6" fill="currentColor"/>
+    <polygon points="32,14 39,32 32,50 25,32" fill="currentColor" opacity="0.18"/>
+    <polygon points="32,14 37,32 32,32" fill="currentColor"/>
+    <polygon points="32,50 27,32 32,32" fill="currentColor" opacity="0.55"/>
+    <circle cx="32" cy="32" r="3" fill="currentColor"/>
+  </symbol>
+</svg>
+
+<header class="site-header">
+  <div class="container header-inner">
+    <div class="brand">
+      <svg class="icon-compass brand-icon" aria-hidden="true"><use href="#icon-compass"></use></svg>
+      <span class="brand-mark">フクミチ診断</span>
+      <span class="brand-sub">あなたの「やってみたい」が、きっと見つかる。</span>
+    </div>
+    <p class="header-lede">診断結果 &mdash; あなたに合う副業と7日間の行動プラン</p>
+    <nav class="site-nav" aria-label="ページ内リンク">
+      <a href="index.html#diagnose">診断ページへ</a>
+      <a href="index.html#disclaimer">免責事項</a>
+      <a href="index.html#privacy">プライバシー</a>
+    </nav>
+  </div>
+</header>
+
+<main class="container">
+
+  <!-- データが見つからない場合の案内 -->
+  <section id="no-result" class="card" hidden>
+    <h2 class="section-title">診断結果が見つかりません</h2>
+    <p class="section-desc">診断がまだ行われていないか、結果の保存期限が切れている可能性があります。診断ページからもう一度お試しください。</p>
+    <div class="form-actions">
+      <a href="index.html#diagnose" class="btn btn-primary btn-large">診断ページへ戻る</a>
+    </div>
+  </section>
+
+  <!-- 診断結果本体 -->
+  <div id="result-root" hidden>
+
+    <section class="card result-hero">
+      <h1 class="section-title">診断結果</h1>
+      <p class="section-desc" id="results-summary"></p>
+
+      <div id="rank-tabs" class="rank-tabs" role="tablist" aria-label="おすすめ順位の切り替え"></div>
+    </section>
+
+    <nav id="detail-nav" class="detail-nav" aria-label="診断結果ページ内ナビゲーション">
+      <a href="#r-overview">概要</a>
+      <a href="#r-reason">あなたに合う理由</a>
+      <a href="#r-pros">メリット</a>
+      <a href="#r-cons">デメリット・注意点</a>
+      <a href="#r-monetize">収益化までの目安</a>
+      <a href="#r-first-action">最初にやる事</a>
+      <a href="#r-needed">必要なもの</a>
+      <a href="#r-cost">初期費用</a>
+      <a href="#r-suitable">向いている人</a>
+      <a href="#r-plan">7日間行動プラン</a>
+    </nav>
+
+    <section id="r-overview" class="card detail-section">
+      <h2 class="section-title">概要</h2>
+      <div class="result-rank-badge" id="r-rank-badge"></div>
+      <h3 class="result-name" id="r-name"></h3>
+      <div class="result-stars" id="r-stars"></div>
+      <p class="result-desc" id="r-desc"></p>
+    </section>
+
+    <section id="r-reason" class="card detail-section">
+      <h2 class="section-title">あなたに合う理由</h2>
+      <p class="section-desc">診断で入力した内容をもとに、この副業があなたに合っている理由を項目ごとに解説します。</p>
+      <ul class="reason-list" id="r-reason-list"></ul>
+    </section>
+
+    <section id="r-pros" class="card detail-section">
+      <h2 class="section-title">メリット</h2>
+      <ul class="detail-list pros" id="r-pros-list"></ul>
+    </section>
+
+    <section id="r-cons" class="card detail-section">
+      <h2 class="section-title">デメリット・注意点</h2>
+      <ul class="detail-list cons" id="r-cons-list"></ul>
+    </section>
+
+    <section id="r-monetize" class="card detail-section">
+      <h2 class="section-title">収益化までの目安</h2>
+      <p class="detail-highlight" id="r-monetize-value"></p>
+      <p class="section-desc">初めての収入が発生するまでの一般的な期間の目安です。個人差があるため、あくまで参考としてご覧ください。</p>
+      <p class="detail-highlight" id="r-income-value"></p>
+    </section>
+
+    <section id="r-first-action" class="card detail-section">
+      <h2 class="section-title">最初にやる事</h2>
+      <p class="detail-highlight" id="r-first-action-value"></p>
+    </section>
+
+    <section id="r-needed" class="card detail-section">
+      <h2 class="section-title">必要なもの</h2>
+      <ul class="needed-list" id="r-needed-list"></ul>
+    </section>
+
+    <section id="r-cost" class="card detail-section">
+      <h2 class="section-title">初期費用</h2>
+      <p class="detail-highlight" id="r-cost-value"></p>
+    </section>
+
+    <section id="r-suitable" class="card detail-section">
+      <h2 class="section-title">向いている人</h2>
+      <p class="detail-highlight" id="r-suitable-value"></p>
+    </section>
+
+    <section id="r-plan" class="card detail-section">
+      <h2 class="section-title">7日間行動プラン</h2>
+      <p class="section-desc">Dayをタップすると、その日の目的・手順・注意点・完了目標が開きます。上から順に、書かれている通りに進めてみましょう。</p>
+      <div class="plan-accordion" id="r-plan-list"></div>
+    </section>
+
+    <div class="form-actions restart-actions">
+      <a href="index.html#diagnose" class="btn btn-outline">診断をやり直す</a>
+    </div>
+
+  </div>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <p class="footer-links"><a href="index.html#disclaimer">免責事項</a><span aria-hidden="true">・</span><a href="index.html#privacy">プライバシーについて</a></p>
+    <p>フクミチ診断 &mdash; 診断結果は参考情報です。入力内容や履歴はこの端末内（localStorage）にのみ保存され、外部には送信されません。</p>
+  </div>
+</footer>
+
+<button type="button" id="back-to-top" class="back-to-top" aria-label="ページ上部へ戻る" tabindex="-1">
+  <span aria-hidden="true">↑</span> TOP
+</button>
+
+<script src="data.js"></script>
+<script src="result.js"></script>
+</body>
+</html>
