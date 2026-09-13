@@ -203,6 +203,10 @@
     renderDetail();
     initDetailNav();
     initBackToTop();
+
+    if (typeof gtag === "function") {
+      gtag("event", "diagnosis_result_view");
+    }
   }
 
   if (document.readyState === "loading") {
