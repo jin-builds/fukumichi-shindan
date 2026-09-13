@@ -187,6 +187,7 @@
      ========================================================== */
   var diagnosisStartSent = false;
   var diagnosisCompleteSent = false;
+  var navigatedToResult = false;
 
   function sendGaEvent(eventName) {
     if (typeof gtag === "function") {
@@ -198,6 +199,12 @@
     if (diagnosisStartSent) return;
     diagnosisStartSent = true;
     sendGaEvent("diagnosis_start");
+  }
+
+  function goToResult() {
+    if (navigatedToResult) return;
+    navigatedToResult = true;
+    window.location.href = "result.html";
   }
 
   /* ==========================================================
@@ -226,10 +233,19 @@
 
       if (!diagnosisCompleteSent) {
         diagnosisCompleteSent = true;
-        sendGaEvent("diagnosis_complete");
-      }
 
-      window.location.href = "result.html";
+        if (typeof gtag === "function") {
+          gtag("event", "diagnosis_complete", {
+            event_callback: goToResult,
+            event_timeout: 1000
+          });
+          setTimeout(goToResult, 1000);
+        } else {
+          goToResult();
+        }
+      } else {
+        goToResult();
+      }
     });
 
     document.getElementById("clear-history").addEventListener("click", clearAllHistory);
