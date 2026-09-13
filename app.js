@@ -183,10 +183,31 @@
   }
 
   /* ==========================================================
+     GA4イベント送信（診断開始／診断完了）
+     ========================================================== */
+  var diagnosisStartSent = false;
+  var diagnosisCompleteSent = false;
+
+  function sendGaEvent(eventName) {
+    if (typeof gtag === "function") {
+      gtag("event", eventName);
+    }
+  }
+
+  function handleDiagnosisFirstInteraction() {
+    if (diagnosisStartSent) return;
+    diagnosisStartSent = true;
+    sendGaEvent("diagnosis_start");
+  }
+
+  /* ==========================================================
      初期化
      ========================================================== */
   function init() {
     var form = document.getElementById("diagnosis-form");
+
+    form.addEventListener("change", handleDiagnosisFirstInteraction, { once: true });
+
     form.addEventListener("submit", function (e) {
       e.preventDefault();
       clearFieldErrors();
@@ -202,6 +223,12 @@
       var results = D.diagnose(parsed.value);
       var entry = D.addHistoryEntry(parsed.value, results);
       D.saveCurrentResult(entry);
+
+      if (!diagnosisCompleteSent) {
+        diagnosisCompleteSent = true;
+        sendGaEvent("diagnosis_complete");
+      }
+
       window.location.href = "result.html";
     });
 
